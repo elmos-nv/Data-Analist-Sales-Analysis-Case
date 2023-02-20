@@ -29,10 +29,10 @@ def price_generator():
     price = fake.pyfloat(left_digits=2, right_digits=2, positive=True)
     return price
 
-def city_generator():
+def provence_generator():
     # Only generate cities in Belgium
-    city = fake.city()
-    return city
+    provence = fake.province()
+    return provence
 
 def customer_id_generator():
     customer_id = fake.random_int(min=1, max=1000)
@@ -61,14 +61,14 @@ def main(rows):
         orders.reset_index(drop=True)
         customer_id = customer_id_generator()
         age = age_generator()
-        city = city_generator()
+        provence = provence_generator()
         date = date_generator()
         
 
         for index, row in orders.iterrows():
-            data.append([order_id, date, row['name'], row['category'], row['price'], age, city, customer_id, quantity_generator()])
+            data.append([order_id, date, row['name'], row['category'], row['price'], age, provence, customer_id, quantity_generator()])
     
-    data = pd.DataFrame(data, columns=['Order ID', 'Date', 'Product', 'Category', 'Price', 'Age', 'City', 'Customer ID', 'Quantity'])
+    data = pd.DataFrame(data, columns=['Order ID', 'Date', 'Product', 'Category', 'Price', 'Age', 'Provence', 'Customer ID', 'Quantity'])
     data.to_csv('sales_data.csv', index=False)
 
 if __name__ == '__main__':
