@@ -1,39 +1,55 @@
 # Sales Analysis Case
-You are a data analyst for a retail company that sells clothing and accessories online. Your manager has asked you to analyze the company's sales over the last year and provide insights on the company's top-selling products, most profitable regions, and customer behavior.
+You are a data analyst from Ikea. Your manager has asked you to analyze the company's sales over the last year and provide insights on the company's top-selling products, most profitable regions, and customer behavior.
 
 
 ## Exercise Instructions
 ### Data
-The dataset provided includes the following columns:
 
+- **Order ID:** Unique identifier for each order
 - **Date:** Date of the transaction
 - **Product:** Name of the product
 - **Category:** Category of the product (e.g., clothing, accessories)
 - **Price:** Price of the product
-- **Region:** Region where the sale took place
+- **Age**: Age of the customer
+- **Provence:** Provence where the sale took place
 - **Customer ID:** Unique identifier for each customer
 - **Quantity:** Quantity of the product sold in the transaction
 
+The dataset is located in the `data` folder with the name sales_data.csv
+
 
 ### Tasks
-1. Calculate the total sales revenue for the company over the last year and visualize the trend over time.
+1. Calculate the total sales revenue for the company over the last year and visualize the trend over time. You can add extra dimensions to the visualization if you wish.
 2. Identify the top-selling products and categories, as well as their sales revenue and quantity sold.
 3. Analyze the sales by region and identify the most profitable regions for the company.
-4. Determine customer behavior by analyzing the number of transactions, average transaction value, and customer retention rate.
-5. Provide recommendations to the company based on the insights obtained from the analysis.
+4. Determine customer behavior by analyzing the number of transactions and average transaction value
+5. Calculate the 95th percentile of the total sales revenue per customer. This is the amount of money that 95% of the customers spend on average.
 
+*You can solve the questions in the exercise.ipynb notebook or in a separate notebook. You can also use any other tool you prefer (e.g., Tableau, Power BI, etc.).*
 
-### Approach
-1. To calculate the total sales revenue for the company over the last year, you can aggregate the dataset by date and sum the price column. You can then create a line chart to visualize the trend over time.
-2. To identify the top-selling products and categories, you can group the dataset by product and category and sum the quantity and price columns. You can then rank the products and categories by sales revenue and quantity sold and create a bar chart to visualize the results.
-3. To analyze the sales by region, you can group the dataset by region and sum the price column. You can then rank the regions by sales revenue and create a map or a bar chart to visualize the results.
-4. To determine customer behavior, you can analyze the number of transactions, average transaction value, and customer retention rate. You can calculate the number of unique customers and transactions, as well as the average transaction value and retention rate. You can then create a dashboard to visualize the results.
-5. Based on the insights obtained from the analysis, you can provide recommendations to the company on how to improve sales and profitability. For example, you can suggest focusing on the top-selling products and categories, expanding into the most profitable regions, and improving customer retention through targeted marketing and promotions.
+## Requirements
+- Python 3.6+
+- Jupyter Notebook
+- Libraries: pandas, numpy, matplotlib, seaborn
 
-### Deliverables
-- A report summarizing the key insights and recommendations for the company.
-- Visualizations of the trends and rankings of sales by product, category, and region.
-- A dashboard summarizing customer behavior metrics and retention rate.
-- Code and documentation detailing the approach and methodology used for the analysis
+### GItHub Codespaces
+You can use GitHub Codespaces to run the notebook in the cloud. To do so, click on the green "Code" button and select "Open with Codespaces". This will open a new tab with the notebook running in the cloud. You can then edit the notebook and run the code.
 
-## Instalation
+### Local Environment
+If you prefer to run the notebook locally, you can clone the repository and install the required libraries using the following commands:
+```bash
+    git clone
+    cd sales-analysis-case
+    pip install -r requirements.txt
+```
+Then, open the notebook using Jupyter Notebook:
+    
+        jupyter notebook
+
+## Submission
+Please submit your solution as a link to a GitHub repository. Mailing this to the competence manager.
+
+## Generating the dataset
+The dataset is already pre-generated using the ./data/generate_product_data.py script. If you want to generate a new dataset, you can run the following command:
+
+    python ./data/generate_product_data.py
